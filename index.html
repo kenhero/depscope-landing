@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Build-Derived SBOM for C++/CMake</title>
+  <meta name="description" content="Genera SBOM CycloneDX e dependency graph per C++/CMake derivati dal build reale. Trova duplicati, drift di versioni e rischi supply-chain.">
+  <style>
+    :root { --bg:#0b0f19; --card:#121a2b; --text:#e8eefc; --muted:#a9b4d0; --accent:#6aa6ff; }
+    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:var(--bg); color:var(--text); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 28px 18px 64px; }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .brand { font-weight:700; letter-spacing:.2px; }
+    .btn { display:inline-block; padding:10px 14px; border-radius:12px; background:var(--accent); color:#07101f; text-decoration:none; font-weight:700; }
+    .btn.secondary { background:transparent; color:var(--text); border:1px solid rgba(232,238,252,.18); }
+    .hero { margin-top: 42px; display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; align-items:start; }
+    .h1 { font-size: 40px; line-height:1.08; margin:0 0 12px; }
+    .p { color:var(--muted); font-size: 16px; line-height:1.6; margin:0 0 18px; }
+    .card { background:var(--card); border:1px solid rgba(232,238,252,.10); border-radius:18px; padding:18px; }
+    .code { background:#0a1222; border:1px solid rgba(232,238,252,.10); border-radius:14px; padding:14px; overflow:auto; color:#d7e4ff; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 13px; }
+    .grid { margin-top: 18px; display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; }
+    .k { font-weight:700; margin:0 0 6px; }
+    .s { color:var(--muted); margin:0; line-height:1.55; }
+    .section { margin-top: 26px; }
+    .h2 { font-size: 22px; margin:0 0 10px; }
+    .list { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    .price { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:12px; }
+    .tag { display:inline-block; padding:4px 10px; border-radius:999px; border:1px solid rgba(232,238,252,.14); color:var(--muted); font-size:12px; }
+    .footer { margin-top: 34px; color:var(--muted); font-size: 13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid, .price { grid-template-columns: 1fr; }
+      .list { grid-template-columns: 1fr; }
+      .h1 { font-size: 34px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="brand">Depscope for CMake</div>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <a class="btn secondary" href="#pricing">Pricing</a>
+        <a class="btn" href="#get">Get the CLI</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="card">
+        <h1 class="h1">SBOM e Dependency Graph affidabili per C++/CMake, derivati dal build reale.</h1>
+        <p class="p">
+          Individua duplicati, drift di versioni e dipendenze non tracciate. Genera report HTML e SBOM CycloneDX
+          pronti per security, audit e CI gating.
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="#get">Get the CLI (free)</a>
+          <a class="btn secondary" href="#demo">Book a 15-min demo</a>
+          <span class="tag">CMake • C++ • CycloneDX</span>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <p class="k">Build-derived</p>
+            <p class="s">Non “guessing”: parte dal grafo del build e dai target reali.</p>
+          </div>
+          <div class="card">
+            <p class="k">Actionable</p>
+            <p class="s">Ti dice dove hai duplicati e come si propagano le transitive deps.</p>
+          </div>
+          <div class="card">
+            <p class="k">CI-ready</p>
+            <p class="s">Artefatti e policy: fallisci la pipeline quando serve, con regole chiare.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="k" id="get">In 5 minuti</p>
+        <div class="code">
+          # build (come fai già oggi)<br/>
+          cmake -S . -B build &amp;&amp; cmake --build build<br/><br/>
+          # genera report + sbom<br/>
+          depscope scan --build-dir build --out out/<br/><br/>
+          # output<br/>
+          out/report.html<br/>
+          out/sbom.cdx.json
+        </div>
+        <p class="s" style="margin-top:10px;">
+          Funziona bene su superproject e monorepo. Nessun backend richiesto per partire.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="h2">Use cases</h2>
+      <div class="list">
+        <div class="card">
+          <p class="k">Audit & Compliance</p>
+          <p class="s">SBOM CycloneDX + inventario licenze e componenti per vendor assessment.</p>
+        </div>
+        <div class="card">
+          <p class="k">CI Governance</p>
+          <p class="s">Blocca merge quando compare una dipendenza non consentita o duplicata.</p>
+        </div>
+        <div class="card">
+          <p class="k">Build Stability</p>
+          <p class="s">Riduce “dependency chaos” che causa build flaky e regressioni.</p>
+        </div>
+        <div class="card">
+          <p class="k">Due diligence (M&A)</p>
+          <p class="s">Visibilità rapida su componenti, licenze e supply-chain risk.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="pricing">
+      <h2 class="h2">Pricing</h2>
+      <div class="price">
+        <div class="card">
+          <p class="k">Free</p>
+          <p class="s">CLI + report HTML + CycloneDX. Perfetto per singoli repo.</p>
+        </div>
+        <div class="card">
+          <p class="k">Pro</p>
+          <p class="s">Integrazione GitHub/GitLab, policy gating, storico e dashboard.</p>
+        </div>
+        <div class="card">
+          <p class="k">Enterprise</p>
+          <p class="s">SSO, on-prem, supporto prioritario, policy avanzate.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="demo">
+      <h2 class="h2">Contatti</h2>
+      <div class="card">
+        <p class="s">Scrivimi per una demo o per diventare design partner: una call breve, caso reale, e roadmap guidata dai tuoi vincoli.</p>
+        <p class="s"><strong>Email:</strong> (inserisci la tua) • <strong>Calendly:</strong> (inserisci link)</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© 2025 Depscope for CMake</div>
+      <div>Privacy • Terms • Security</div>
+    </div>
+  </div>
+</body>
+</html>
