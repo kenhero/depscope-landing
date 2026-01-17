@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Build-Derived SBOM for C++/CMake</title>
-  <meta name="description" content="Generate CycloneDX SBOMs and dependency graphs for C++/CMake derived from the live build. Find duplicates, version drift, and supply chain risks.">
+  <meta name="description" content="Generate CycloneDX SBOMs and dependency graphs for C++/CMake derived from the actual build. Find duplicates, version drift, and supply chain risks.">
   <style>
     :root { --bg:#0b0f19; --card:#121a2b; --text:#e8eefc; --muted:#a9b4d0; --accent:#6aa6ff; }
     body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:var(--bg); color:var(--text); }
@@ -41,7 +41,7 @@
       <div class="brand">Depscope for CMake</div>
       <div style="display:flex; gap:10px; align-items:center;">
         <a class="btn secondary" href="#pricing">Pricing</a>
-        <a class="btn" href="https://github.com/kenhero/depscope">Get the CLI</a>
+        <a class="btn" href="https://github.com/kenhero/depscope" target="_blank" rel="noopener noreferrer">Get the CLI</a>
       </div>
     </div>
 
@@ -53,8 +53,8 @@
           ready for security, audit, and CI gating.
         </p>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn" href="https://github.com/kenhero/depscope">Get the CLI (free)</a>
-          <a class="btn secondary" href="mailto:b.vittorino@frgconsulting.com?subject=Depscope%20demo%20request">Book a 15-min demo</a>
+          <a class="btn" href="https://github.com/kenhero/depscope" target="_blank" rel="noopener noreferrer">Get the CLI (free)</a>
+          <a class="btn secondary" href="#demo">Book a 15-min demo</a>
           <span class="tag">CMake • C++ • CycloneDX</span>
         </div>
 
@@ -121,11 +121,11 @@
           <p class="s">CLI + report HTML + CycloneDX. Perfect for single repos.</p>
         </div>
         <div class="card">
-          <p class="k">Pro</p>
+          <p class="k">Pro <span class="tag">Coming soon</span></p>
           <p class="s">GitHub/GitLab integration, gating policy, history, and dashboard.</p>
         </div>
         <div class="card">
-          <p class="k">Enterprise</p>
+          <p class="k">Enterprise <span class="tag">Coming soon</span></p>
           <p class="s">SSO, on-prem, priority support, advanced policies.</p>
         </div>
       </div>
@@ -135,13 +135,12 @@
       <h2 class="h2">Contacts</h2>
       <div class="card">
         <p class="s">Contact me for a demo or to become a design partner: a short call, a real case study, and a roadmap guided by your constraints.</p>
-        <p class="s"><strong>Email:</strong> (enter yours) • <strong>Calendly:</strong> (inserisci link)</p>
+        <a class="btn" href="mailto:b.vittorino@frgconsulting.com?subject=Depscope%20demo%20request">Email me</a>
       </div>
     </div>
 
     <div class="footer">
       <div>© 2025 Depscope for CMake</div>
-      <div>Privacy • Terms • Security</div>
     </div>
   </div>
 </body>
