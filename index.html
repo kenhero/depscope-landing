@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Build-Derived SBOM for C++/CMake</title>
-  <meta name="description" content="Genera SBOM CycloneDX e dependency graph per C++/CMake derivati dal build reale. Trova duplicati, drift di versioni e rischi supply-chain.">
+  <meta name="description" content="Generate CycloneDX SBOMs and dependency graphs for C++/CMake derived from the live build. Find duplicates, version drift, and supply chain risks.">
   <style>
     :root { --bg:#0b0f19; --card:#121a2b; --text:#e8eefc; --muted:#a9b4d0; --accent:#6aa6ff; }
     body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; background:var(--bg); color:var(--text); }
@@ -47,46 +47,46 @@
 
     <div class="hero">
       <div class="card">
-        <h1 class="h1">SBOM e Dependency Graph affidabili per C++/CMake, derivati dal build reale.</h1>
+        <h1 class="h1">Reliable SBOM and Dependency Graph for C++/CMake, derived from real-world builds.</h1>
         <p class="p">
-          Individua duplicati, drift di versioni e dipendenze non tracciate. Genera report HTML e SBOM CycloneDX
-          pronti per security, audit e CI gating.
+          Identify duplicates, version drift, and untracked dependencies. Generate CycloneDX HTML and SBOM reports
+          ready for security, audit, and CI gating.
         </p>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
           <a class="btn" href="https://github.com/kenhero/depscope">Get the CLI (free)</a>
-          <a class="btn secondary" href="#demo">Book a 15-min demo</a>
+          <a class="btn secondary" href="mailto:YOUR_EMAIL_HERE?subject=Depscope%20demo%20request">Book a 15-min demo</a>
           <span class="tag">CMake • C++ • CycloneDX</span>
         </div>
 
         <div class="grid">
           <div class="card">
             <p class="k">Build-derived</p>
-            <p class="s">Non “guessing”: parte dal grafo del build e dai target reali.</p>
+            <p class="s">No “guessing”: start from the build graph and the real targets.</p>
           </div>
           <div class="card">
             <p class="k">Actionable</p>
-            <p class="s">Ti dice dove hai duplicati e come si propagano le transitive deps.</p>
+            <p class="s">It tells you where you have duplicates and how the transitive deps propagate.</p>
           </div>
           <div class="card">
             <p class="k">CI-ready</p>
-            <p class="s">Artefatti e policy: fallisci la pipeline quando serve, con regole chiare.</p>
+            <p class="s">Artifacts and policies: Fail the pipeline when necessary, with clear rules.</p>
           </div>
         </div>
       </div>
 
       <div class="card">
-        <p class="k" id="get">In 5 minuti</p>
+        <p class="k" id="get">In 5 minutes</p>
         <div class="code">
-          # build (come fai già oggi)<br/>
+          # build (as you already do today)<br/>
           cmake -S . -B build &amp;&amp; cmake --build build<br/><br/>
-          # genera report + sbom<br/>
+          # generate report + sbom<br/>
           depscope scan --build-dir build --out out/<br/><br/>
           # output<br/>
           out/report.html<br/>
           out/sbom.cdx.json
         </div>
         <p class="s" style="margin-top:10px;">
-          Funziona bene su superproject e monorepo. Nessun backend richiesto per partire.
+          It works well on superprojects and monorepos. No backend is required to get started.
         </p>
       </div>
     </div>
@@ -96,19 +96,19 @@
       <div class="list">
         <div class="card">
           <p class="k">Audit & Compliance</p>
-          <p class="s">SBOM CycloneDX + inventario licenze e componenti per vendor assessment.</p>
+          <p class="s">SBOM CycloneDX + license and component inventory for vendor assessment.</p>
         </div>
         <div class="card">
           <p class="k">CI Governance</p>
-          <p class="s">Blocca merge quando compare una dipendenza non consentita o duplicata.</p>
+          <p class="s">Block merge when an illegal or duplicate dependency appears.</p>
         </div>
         <div class="card">
           <p class="k">Build Stability</p>
-          <p class="s">Riduce “dependency chaos” che causa build flaky e regressioni.</p>
+          <p class="s">Reduces “dependency chaos” that causes flaky builds and regressions.</p>
         </div>
         <div class="card">
           <p class="k">Due diligence (M&A)</p>
-          <p class="s">Visibilità rapida su componenti, licenze e supply-chain risk.</p>
+          <p class="s">Quick visibility into components, licenses, and supply chain risk.</p>
         </div>
       </div>
     </div>
@@ -118,24 +118,24 @@
       <div class="price">
         <div class="card">
           <p class="k">Free</p>
-          <p class="s">CLI + report HTML + CycloneDX. Perfetto per singoli repo.</p>
+          <p class="s">CLI + report HTML + CycloneDX. Perfect for single repos.</p>
         </div>
         <div class="card">
           <p class="k">Pro</p>
-          <p class="s">Integrazione GitHub/GitLab, policy gating, storico e dashboard.</p>
+          <p class="s">GitHub/GitLab integration, gating policy, history, and dashboard.</p>
         </div>
         <div class="card">
           <p class="k">Enterprise</p>
-          <p class="s">SSO, on-prem, supporto prioritario, policy avanzate.</p>
+          <p class="s">SSO, on-prem, priority support, advanced policies.</p>
         </div>
       </div>
     </div>
 
     <div class="section" id="demo">
-      <h2 class="h2">Contatti</h2>
+      <h2 class="h2">Contacts</h2>
       <div class="card">
-        <p class="s">Scrivimi per una demo o per diventare design partner: una call breve, caso reale, e roadmap guidata dai tuoi vincoli.</p>
-        <p class="s"><strong>Email:</strong> (inserisci la tua) • <strong>Calendly:</strong> (inserisci link)</p>
+        <p class="s">Contact me for a demo or to become a design partner: a short call, a real case study, and a roadmap guided by your constraints.</p>
+        <p class="s"><strong>Email:</strong> (enter yours) • <strong>Calendly:</strong> (inserisci link)</p>
       </div>
     </div>
 
